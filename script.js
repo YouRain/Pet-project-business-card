@@ -36,7 +36,7 @@ function burgerSlaider() {
     headerLogo.classList.toggle("header__logo-trans");
     btnBurger.classList.toggle("active");
 }
-//Переключение меджду person
+//Переключение между person
 let btnRu = document.querySelectorAll(".intro__img")[0];    
 let btnRi = document.querySelectorAll(".intro__img")[1];
 function infoRu() {
