@@ -208,7 +208,6 @@ body {
 }
 .btn__item {
     display: block;
-    width: 140px;
     margin: 0 10px;
     padding: 12px 15px;
     background-color: green;
@@ -892,7 +891,6 @@ body {
         margin: 15px 0 0 0;
     }
     .btn div {
-        width: 100%;
         margin-bottom: 20px;
     }
     .btn__item {

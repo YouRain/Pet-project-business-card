@@ -9,6 +9,11 @@ function scrollHeader() {
     if (window.pageYOffset + header.offsetHeight < personImg.offsetTop) {
         header.classList.remove("headermodif");
     };
+    if (btnBurger.classList.contains("active")) {
+        navBox.classList.remove("burger");
+        headerLogo.classList.remove("header__logo-trans");
+        btnBurger.classList.remove("active");
+    }
 }
 //Кнопки навигации (через делегирование)
 let navigation = document.querySelector("nav");
@@ -28,10 +33,10 @@ function scrollNavigation(event) {
 }
 //Бургер меню
 let btnBurger = document.querySelector(".nav-toggle");
+let navBox = document.querySelector(".nav-wrapper");
+let headerLogo = document.querySelector(".header__logo");
 btnBurger.addEventListener("click", burgerSlaider);
 function burgerSlaider() {
-    let navBox = document.querySelector(".nav-wrapper");
-    let headerLogo = document.querySelector(".header__logo");
     navBox.classList.toggle("burger");
     headerLogo.classList.toggle("header__logo-trans");
     btnBurger.classList.toggle("active");
@@ -152,4 +157,12 @@ function defaultBorder(event) {
 for (let prop of inputList) {
     prop.addEventListener("focus", lightBorder);
     prop.addEventListener("blur", defaultBorder);
+}
+//Предотвращает отправку формы (нет бэка)
+let btnSubmit = document.querySelectorAll(".submit");
+function preventSubmit(event) {
+    event.preventDefault();
+}
+for (let prop of btnSubmit) {
+    prop.addEventListener("click", preventSubmit);
 }
